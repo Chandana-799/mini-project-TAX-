@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>REGISTRATION PAGE</title>
+
+<body>
+	{%extends 'index.html'%}
+	{%block content%}
+	<style type="text/css">
+       body{
+       			background: linear-gradient(rgba(29,29,29,0.9),rgba(29,29,29,0.9)),url("https://img.etimg.com/thumb/width-640,height-480,imgsize-1191868,resizemode-1,msid-73353143/want-to-know-how-much-you-need-to-invest-to-save-tax-use-this-calculator-to-find-out.jpg");
+                height: 100vh;
+                width:100%;
+                background-repeat: no-repeat;
+	    }
+
+     .bg {
+                background: linear-gradient(rgba(29,29,29,0.9),rgba(29,29,29,0.9)),url("https://img.etimg.com/thumb/width-640,height-480,imgsize-1191868,resizemode-1,msid-73353143/want-to-know-how-much-you-need-to-invest-to-save-tax-use-this-calculator-to-find-out.jpg");
+                height: 100vh;
+                width:100%;
+                left:0;
+			    top:0;
+			    background-repeat: no-repeat;
+                background-position: center;
+
+                background-size: cover;
+
+                align-items:center;
+                justify-items:center;
+                color:black;
+                font-size:2vw;
+     }
+ </style>
+	<div class="bg">
+		<h2> Don't have an accoount!! Create one!!</h2>
+		<form method="POST">
+			{%csrf_token%}
+			{{form.as_p}}
+			<form action=http://127.0.0.1:8000/accounts/login/>
+			<button class="button" style="float:right">submit</button>
+			</form><br/><br/><br/><br/>
+		</form>
+	</div>
+
+
+{%endblock%}
+</body>
+</head>
+</html>

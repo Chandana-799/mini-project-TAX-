@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<body>
+{%extends 'index.html'%}
+{%block content%}
+
+		<h1>Welcome ,{{user.username}}</h1>
+		<form method="POST">
+				{%csrf_token%}
+					<fieldset class="form-group">
+				{{form.as_p}}
+				<legend style="padding:20px 0; font-size:20px;">Personal Information:</legend>
+						<div class="form-group">
+						<label for="exampleFormControlInput1">Cardnumber:</label>
+						<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="xxxx xxxx xxxx xxxx">
+						</div>
+
+						<div class="form-group">
+							<label for="exampleFormControlInput1">CVV:</label>
+							<input type="number" class="form-control" id="exampleFormControlInput1" placeholder="xxx">
+						</div>
+
+						<div class="form-group">
+							<label for="exampleFormControlInput1">Valid Date:</label>
+							<input type="date" class="form-control" id="exampleFormControlInput1">
+						</div>
+                    </fieldset><br/><br/>
+					<a href="payment/"><button class="button" type="submit" >SUBMIT</button>
+
+
+			</form>
+{%endblock%}
+</body>
+</head>
+</html>
