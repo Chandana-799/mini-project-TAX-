@@ -1,16 +1,24 @@
-from django.urls import path
-from . import views
-from django.contrib.auth.views import LoginView,LogoutView
+"""login URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/1.9/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
+Including another URLconf
+    1. Add an import:  from blog import urls as blog_urls
+    2. Import the include() function: from django.conf.urls import url, include
+    3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
+"""
+from django.contrib import admin
+from django.urls import path,include
+
 
 urlpatterns = [
-    path('',views.indexView,name="home"),
-    path('taxpage/',views.taxpageView,name="taxpage_url"),
-    path('login/',LoginView.as_view(),name="login_url"),
-    path('register/',views.registerView,name="register_ url"),
-    path('commonpage/',views.commonpageView,name="commonpage_url"),
-    path('payment/',views.paymentView,name="payment_url"),
-    
-    path('logout/',LogoutView.as_view(next_page='taxpage'),name="logout"),
-    ]
-
-# Create your views here.
+    path('admin/', admin.site.urls),
+    path('accounts/',include('accounts.urls')),
+]
